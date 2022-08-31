@@ -31,8 +31,8 @@ fastify.register(FastifyWebSocket)
 fastify.register(async function (fastify) {
   fastify.get('/websocket', { websocket: true }, (con, req) => {
     console.log(req.cookies)
-    con.socket.on('message', message => {
-      console.log(message)
+    con.socket.on('message', (message) => {
+      console.log(String(message))
     })
   })
 })
